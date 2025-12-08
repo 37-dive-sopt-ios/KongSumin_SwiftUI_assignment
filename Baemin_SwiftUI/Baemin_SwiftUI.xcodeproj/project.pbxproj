@@ -10,22 +10,9 @@
 		8DB77FB42EE2AAE9000FE7EE /* Baemin_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baemin_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		8D442C4C2EE6B6BA00AC51C8 /* Exceptions for "Baemin_SwiftUI" folder in "Baemin_SwiftUI" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Baemin-SwiftUI-Info.plist",
-			);
-			target = 8DB77FB32EE2AAE9000FE7EE /* Baemin_SwiftUI */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8DB77FB62EE2AAE9000FE7EE /* Baemin_SwiftUI */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				8D442C4C2EE6B6BA00AC51C8 /* Exceptions for "Baemin_SwiftUI" folder in "Baemin_SwiftUI" target */,
-			);
 			path = Baemin_SwiftUI;
 			sourceTree = "<group>";
 		};

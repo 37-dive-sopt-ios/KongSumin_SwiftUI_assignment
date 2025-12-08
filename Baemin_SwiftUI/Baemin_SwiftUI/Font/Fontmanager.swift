@@ -94,7 +94,7 @@ struct CustomFontModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(style.font)
-            .kerning(style.fontProperty.kern)
+//            .kerning(style.fontProperty.kern)
     }
 }
 
