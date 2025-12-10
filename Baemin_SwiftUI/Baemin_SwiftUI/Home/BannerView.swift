@@ -17,7 +17,7 @@ struct BannerView: View {
                     Image(banner.image)
                         .resizable()
                         .scaledToFill()
-                        .frame(width: 410, height: 130)
+                        .frame(width: 410, height: 115)
                         .clipped()
                 }
             }

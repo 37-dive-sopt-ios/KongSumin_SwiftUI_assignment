@@ -23,6 +23,7 @@ struct HomeView: View {
                 
                 BannerView(categories: BannerModel.dummyData)
                 
+                RankingView(categories: RankingModel.dummyData)
             }
         }
     }

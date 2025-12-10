@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Chevron__right.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
