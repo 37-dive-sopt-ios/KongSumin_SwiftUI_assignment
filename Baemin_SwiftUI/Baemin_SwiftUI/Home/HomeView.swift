@@ -9,10 +9,14 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        ScrollView {
+        ScrollView{
             TopBar()
 
             SearchBar()
+            
+            EventText()
+            
+            CategoryView(categories: MenuModel.dummyData)
         }
     }
 }

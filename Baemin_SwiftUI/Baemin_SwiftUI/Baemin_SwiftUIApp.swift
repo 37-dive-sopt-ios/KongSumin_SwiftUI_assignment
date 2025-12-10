@@ -11,7 +11,9 @@ import SwiftUI
 struct Baemin_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
+//            LoginView()
+            MainTabView()
+            
         }
     }
 }
