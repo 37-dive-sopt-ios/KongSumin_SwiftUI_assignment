@@ -10,7 +10,7 @@ import SwiftUI
 
 enum Route: Hashable{
     case welcome(email: String)
-    case main
+    case home
 }
 
 struct LoginView: View {
@@ -97,13 +97,13 @@ struct LoginView: View {
                 switch route {
                 case .welcome(email: let email):
                     WelcomeView(path: $path, email: email)
-                case .main:
-                    MainView()
+                case .home:
+//                    HomeView()
+                    MainTabView()
                 }
             }
         }
     }
-        
 }
         
 

@@ -42,7 +42,7 @@ struct WelcomeView: View {
             
             Spacer()
             Button{
-                path.append(.main)
+                path.append(.home)
             } label: {
                 Text("메인으로")
                     .applyFont(style: .head_b_18)
@@ -56,7 +56,7 @@ struct WelcomeView: View {
             .padding(.bottom, 48)
             
         }
-        Spacer()        
+        Spacer()
         .navigationBarBackButtonHidden(true)
     }
     
