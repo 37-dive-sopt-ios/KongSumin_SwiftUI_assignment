@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct RankingView: View {
-    
-    
     let categories: [RankingModel]
     
     private let rankingRows = [
@@ -56,13 +54,10 @@ struct RankingView: View {
                         }
                     }
                     .padding(.horizontal, 16)
-                    .frame(height: 250)
+                    .frame(height: 270)
                 }
-                
-                
                 Spacer()
             }
-            
         }
         .frame(height: 303)
     }

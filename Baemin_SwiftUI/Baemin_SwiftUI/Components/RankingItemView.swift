@@ -32,10 +32,12 @@ struct RankingItemView: View {
                         .applyFont(style: .body_r_12)
                         .foregroundStyle(.baeminGray600)
                 }
-                
-                Text(model.title)
-                    .applyFont(style: .body_r_14)
-                    .foregroundStyle(.baeminBlack)
+                HStack{
+                    Text(model.title)
+                        .applyFont(style: .body_r_14)
+                        .foregroundStyle(.baeminBlack)
+                    Spacer()
+                }
                 HStack{
                     Text(model.discount)
                         .applyFont(style: .head_b_14)
@@ -58,11 +60,7 @@ struct RankingItemView: View {
                         .foregroundStyle(.baeminPurple1)
                     Spacer()
                 }
-                
-                
-                
             }
-            
         }
         .frame(width: 145, height: 243)
     }

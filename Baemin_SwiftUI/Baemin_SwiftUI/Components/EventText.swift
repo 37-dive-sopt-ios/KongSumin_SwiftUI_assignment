@@ -26,5 +26,6 @@ struct EventText: View {
         }
         .padding(.leading, 16)
         .padding(.top, 24)
+        .padding(.bottom, 27)
     }
 }

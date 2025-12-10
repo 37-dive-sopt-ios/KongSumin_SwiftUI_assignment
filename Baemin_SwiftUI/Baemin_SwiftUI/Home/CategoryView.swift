@@ -22,15 +22,30 @@ struct CategoryView: View {
     ]
     
     var body: some View {
+        ZStack{
+            LinearGradient(
+                colors: [
+                    .baeminBackgroundWhite,
+                    .baeminMint300
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .frame(height: 80)
+            .padding(.bottom, -40)
+            VStack(alignment: .leading) {
+                EventText()
+                menuTabBar
+            }
+        }
+            
         VStack(alignment: .leading) {
-            menuTabBar
             Divider()
-            
             tabContentView
-            
             Divider()
             moreMenuButton
         }
+        .background(.baeminWhite)
     }
     
     //MARK: - MenuTabBar
@@ -42,7 +57,12 @@ struct CategoryView: View {
                 }
             }
             .padding(.horizontal, 20)
+            .padding(.top, 15)
         }
+        .frame(maxWidth: .infinity)
+        .background(.baeminWhite)
+        .cornerRadius(16, corners: [.topLeft, .topRight])
+        .clipped()
     }
     
     //MARK: - MenuTabContentView
@@ -75,7 +95,6 @@ struct CategoryView: View {
                 ItemView(model: item)
             }
         }
-        
     }
     
     private var CustomView: some View {
@@ -87,7 +106,6 @@ struct CategoryView: View {
                 .foregroundStyle(.baeminGray300)
         }
     }
-    
     
     //MARK: - MoreMenu
     private var moreMenuButton: some View {

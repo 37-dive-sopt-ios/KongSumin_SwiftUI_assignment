@@ -30,6 +30,7 @@ struct StoreView: View {
             .frame(height: 96)
             spacerView
         }
+        .background(.baeminWhite)
     }
     
     

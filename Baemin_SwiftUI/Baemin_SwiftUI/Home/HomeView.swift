@@ -10,22 +10,24 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         ScrollView{
-            VStack(spacing: 0) {
+            LazyVStack(spacing: 0, pinnedViews: [.sectionHeaders]) {
                 TopBar()
                 
-                SearchBar()
-                
-                EventText()
-                
-                CategoryView(categories: MenuModel.dummyData)
-                
-                StoreView(categories: StoreModel.dummyData)
-                
-                BannerView(categories: BannerModel.dummyData)
-                
-                RankingView(categories: RankingModel.dummyData)
+                Section {
+                    VStack(spacing: 0) {
+                        CategoryView(categories: MenuModel.dummyData)
+                        StoreView(categories: StoreModel.dummyData)
+                        BannerView(categories: BannerModel.dummyData)
+                        RankingView(categories: RankingModel.dummyData)
+                    }
+                } header: {
+                    SearchBar()
+                        .background(Color.baeminBackgroundWhite)
+                        .zIndex(1)
+                }
             }
         }
+        .background(Color.baeminBackgroundWhite)
     }
 }
 
