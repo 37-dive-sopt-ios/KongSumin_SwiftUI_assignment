@@ -10,6 +10,7 @@ import SwiftUI
 
 enum Route: Hashable{
     case welcome(email: String)
+    case main
 }
 
 struct LoginView: View {
@@ -17,6 +18,10 @@ struct LoginView: View {
     @State private var password: String = ""
     @State private var path: [Route] = []
     
+    
+    var isFormValid: Bool {
+        Validator.isValidEmail(email) && Validator.isValidPassword(password)
+    }
     
     var body: some View {
         NavigationStack(path: $path){
@@ -64,10 +69,12 @@ struct LoginView: View {
                         .applyFont(style: .head_b_18)
                         .foregroundStyle(.baeminWhite)
                         .frame(maxWidth: .infinity, maxHeight: 46)
-                        .background(.baeminGray200)
+                        .background(isFormValid ? .baeminMint500 : .baeminGray200)
                         .cornerRadius(4)
                         .padding(.top, 20)
                 }
+                .disabled(!isFormValid)
+                
                 Button{ } label: {
                     HStack{
                         Text("계정 찾기")
@@ -81,13 +88,17 @@ struct LoginView: View {
                 Spacer()
             }
             .padding(10)
-        
-            
+            .onAppear{
+                email = ""
+                password = ""
+            }
             .navigationDestination(for: Route.self){
                 route in
                 switch route {
                 case .welcome(email: let email):
-                    WelcomeView(email: email)
+                    WelcomeView(path: $path, email: email)
+                case .main:
+                    MainView()
                 }
             }
         }

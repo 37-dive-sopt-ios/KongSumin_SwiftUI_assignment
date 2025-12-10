@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    @Binding var path: [Route]
     var email: String
         
     var body: some View {
         VStack{
             HStack(alignment: .top){
                 Button {
-                    print("뒤로가기")
+                    path.removeLast()
                 } label: {
                     Image("ArrowLeft")
                 }
@@ -23,8 +24,7 @@ struct WelcomeView: View {
                     .applyFont(style: .title_sb_18)
                     .padding(.top,12)
                 Spacer()
-                Button {
-                } label: {
+                Button {} label: {
                     Image("ArrowLeft")
                 }
                 .padding(.leading,18)
@@ -41,7 +41,9 @@ struct WelcomeView: View {
                 .padding(.top, 16)
             
             Spacer()
-            Button{ } label: {
+            Button{
+                path.append(.main)
+            } label: {
                 Text("메인으로")
                     .applyFont(style: .head_b_18)
                     .foregroundStyle(.baeminWhite)
@@ -54,8 +56,10 @@ struct WelcomeView: View {
             .padding(.bottom, 48)
             
         }
-        Spacer()
+        Spacer()        
+        .navigationBarBackButtonHidden(true)
     }
+    
 }
         
 
