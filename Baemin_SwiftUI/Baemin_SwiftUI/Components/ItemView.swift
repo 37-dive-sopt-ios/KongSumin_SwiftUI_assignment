@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ItemView: View {
-    let model: MenuModel
+struct ItemView<T: StoreItemProtocol>: View {
+    var model: T
     
     var body: some View {
         VStack(spacing: 6){
@@ -25,6 +25,6 @@ struct ItemView: View {
                 .applyFont(style: .body_r_14)
                 .foregroundStyle(.baeminBlack)
         }
-        .frame(width: 62, height: 78)
+        .frame(width: 62, height: 74)
     }
 }

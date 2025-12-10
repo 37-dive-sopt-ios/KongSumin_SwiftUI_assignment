@@ -10,13 +10,20 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         ScrollView{
-            TopBar()
-
-            SearchBar()
-            
-            EventText()
-            
-            CategoryView(categories: MenuModel.dummyData)
+            VStack(spacing: 0) {
+                TopBar()
+                
+                SearchBar()
+                
+                EventText()
+                
+                CategoryView(categories: MenuModel.dummyData)
+                
+                StoreView(categories: StoreModel.dummyData)
+                
+                BannerView(categories: BannerModel.dummyData)
+                
+            }
         }
     }
 }
@@ -24,3 +31,4 @@ struct HomeView: View {
 #Preview {
     HomeView()
 }
+ 

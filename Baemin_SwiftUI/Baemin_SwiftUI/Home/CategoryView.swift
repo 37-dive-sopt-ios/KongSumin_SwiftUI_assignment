@@ -30,9 +30,7 @@ struct CategoryView: View {
             
             Divider()
             moreMenuButton
-            Divider()
         }
-            
     }
     
     //MARK: - MenuTabBar
@@ -66,25 +64,29 @@ struct CategoryView: View {
     
     //MARK: - MenuView
     private let menuRows = [
-        GridItem(.fixed(78), spacing: 14),
-        GridItem(.fixed(78), spacing: 14)
+        GridItem(.fixed(78), spacing: 12),
+        GridItem(.fixed(78), spacing: 12)
     ]
     
     
     private var FoodDeliveryView: some View {
-        LazyHGrid(rows: menuRows) {
+        LazyHGrid(rows: menuRows, spacing: 12) {
             ForEach(categories) { item in
                 ItemView(model: item)
             }
         }
+        
     }
     
     private var CustomView: some View {
-        Image("pocha")
-            .resizable()
-            .scaledToFit()
+        VStack{
+            Image("pocha")
+                .resizable()
+                .scaledToFit()
+            Text("\(menuTitles[selectedTab]) 페이지")
+                .foregroundStyle(.baeminGray300)
+        }
     }
-    
     
     
     //MARK: - MoreMenu
@@ -119,5 +121,4 @@ struct CategoryView: View {
                 .foregroundStyle(selectedTab == index ? .baeminBlack : .clear)
         }
     }
-    
 }

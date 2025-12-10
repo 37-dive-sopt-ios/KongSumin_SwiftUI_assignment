@@ -16,7 +16,6 @@ struct MainTabView: View {
             selectedContentView
             MainTabBar(selectedIndex: $selectedIndex)
         }
-        .ignoresSafeArea(edges: .all)
     }
 }
 
